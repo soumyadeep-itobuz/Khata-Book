@@ -1,3 +1,9 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: #FCE9F1;
+}
 .hidden {
     display: none !important;
   }
