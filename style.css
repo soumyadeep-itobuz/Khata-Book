@@ -1,9 +1,10 @@
 body {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    background-color: #FCE9F1;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  background-color: #fce9f1;
 }
+
 .hidden {
-    display: none !important;
-  }
+  display: none !important;
+}
