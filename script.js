@@ -30,8 +30,8 @@ function submit() {
 
 function update(i) {
   document.querySelector(".updatedButton").innerHTML = "";
-  document.querySelector(".inputContainer").classList.add("hidden");
-  document.querySelector(".display").classList.add("hidden");
+  document.querySelector(".inputContainer").classList.remove("hidden");
+  document.querySelector(".display").classList.remove("hidden");
   document.querySelector(".updated").classList.remove("hidden");
   console.log(arr[i]);
 
