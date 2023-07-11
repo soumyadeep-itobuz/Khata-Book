@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khata Book</title>
+    <link rel="stylesheet" href="../bootstrap/bootstrap-5.3.0-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+  <h1 class="text-center text-danger mt-5">Khata Book</h1>
+  <div class="d-flex flex-column flex-md-row justify-content-center gap-3 mt-5 inputContainer fs-5 container p-4 ">
+    <input type="text" placeholder="Enter name..." id="name" class="align-self-center p-2" />
+    <input type="number" placeholder="Money Borrowed" id="money" class="align-self-center p-2" />
+    <button onclick="submit()" class="align-self-center bg-warning p-2">Submit</button>
+  </div>
+  <div class="d-flex flex-column flex-md-row gap-0 w-100 container">
+    <div class=" w-50 display d-flex flex-column mt-5 justify-content-around gap-5 container align-self-end"></div>
+    <div class=" updated d-flex justify-content-center mt-5 gap-2"> 
+    <input type="number" placeholder="Money Updated" id="money-updated" row="2" column="5" class=" align-self-end p-2"/>
+    <p class="updatedButton align-self-end d-flex align-items-end gap-3"></p>
+    </div>
+  </div>
+  <div class="updatedDisplay d-flex flex-column mt-5 justify-content-center"></div>
+    
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
