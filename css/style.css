@@ -8,6 +8,7 @@ body {
 .hidden {
   display: none !important;
 }
+
 .updated input {
   max-height: 4rem;
 }

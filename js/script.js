@@ -1,4 +1,4 @@
-const arr = JSON.parse(localStorage.getItem("arr")) || [];
+const arrayList = JSON.parse(localStorage.getItem("arrayList")) || [];
 const person = document.querySelector("#name");
 const amount = document.querySelector("#money");
 const moneyUpdated = document.querySelector("#money-updated");
@@ -17,11 +17,11 @@ person.addEventListener("keydown", function (e) {
 });
 
 function submit() {
-  if (!person.value.trim() || !amount.value.trim() || amount.value <= 0) {    
+  if (!person.value.trim() || !amount.value.trim() || amount.value <= 0) {
     alert("Empty Field Not Allowed");
   } else {
-    arr.push({ name: person.value, money: amount.value });
-    localStorage.setItem("arr", JSON.stringify(arr));
+    arrayList.push({ name: person.value, money: amount.value });
+    localStorage.setItem("arrayList", JSON.stringify(arrayList));
     show();
   }
   person.value = "";
@@ -32,26 +32,26 @@ function update(i) {
   updatedButton.innerHTML = "";
   display.classList.remove("hidden");
   updatedDisplay.classList.remove("hidden");
-  updatedButton.innerHTML += `<button class="bg-success align-self-end p-1 text-white"onclick="addMoney(${i})">Add</button>
-  <button class="bg-danger align-self-end  p-1 text-white"onclick="subMoney(${i})">Sub</button>`;
+  updatedButton.innerHTML += `<button class="bg-success align-self-center text-white"onclick="addMoney(${i})">Add</button>
+  <button class="bg-danger align-self-center text-white"onclick="subMoney(${i})">Sub</button>`;
   moneyUpdated.value = "";
 }
 
 function removeItem(i) {
-  arr.splice(i, 1);
-  localStorage.setItem("arr", JSON.stringify(arr));
+  arrayList.splice(i, 1);
+  localStorage.setItem("arrayList", JSON.stringify(arrayList));
   show();
 }
 
 function addMoney(i) {
-  arr[i].money = Number(arr[i].money) + Number(moneyUpdated.value);
-  localStorage.setItem("arr", JSON.stringify(arr));
+  arrayList[i].money = Number(arrayList[i].money) + Number(moneyUpdated.value);
+  localStorage.setItem("arrayList", JSON.stringify(arrayList));
   show();
 }
 
 function subMoney(i) {
-  arr[i].money = Number(arr[i].money) - Number(moneyUpdated.value);
-  localStorage.setItem("arr", JSON.stringify(arr));
+  arrayList[i].money = Number(arrayList[i].money) - Number(moneyUpdated.value);
+  localStorage.setItem("arrayList", JSON.stringify(arrayList));
   show();
 }
 
@@ -59,9 +59,9 @@ function show() {
   display.classList.remove("hidden");
   updatedDisplay.classList.add("hidden");
   display.innerHTML = "";
-  for (let i = 0; i < arr.length; i++) {
-    display.innerHTML += `<div class="d-flex justify-content-center gap-5"><span class="align-self-center">Name : ${arr[i].name}</span>
-    <span class="align-self-center">Money Borrowed : ${arr[i].money}</span>
+  for (let i = 0; i < arrayList.length; i++) {
+    display.innerHTML += `<div class="d-flex justify-content-center gap-5"><span class="align-self-center">Name : ${arrayList[i].name}</span>
+    <span class="align-self-center">Money Borrowed : ${arrayList[i].money}</span>
     <button class="bg-success" onclick="update(${i})">Update</button>
     <button class="bg-danger text-white" onclick="removeItem(${i})">Delete</button>
     </div>`;
@@ -69,9 +69,9 @@ function show() {
 }
 
 function removeAll() {
-  arr.splice(0, arr.length);
+  arrayList.splice(0, arrayList.length);
   show();
-  localStorage.setItem("arr", JSON.stringify(arr));
+  localStorage.setItem("arrayList", JSON.stringify(arrayList));
 }
 
 show();
