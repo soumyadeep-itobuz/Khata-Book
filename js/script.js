@@ -71,7 +71,7 @@ function show() {
 function removeAll() {
   arrayList.splice(0, arrayList.length);
   show();
-  localStorage.setItem("arrayList", JSON.stringify(arrayList));
+  localStorage.clear()
 }
 
 show();
