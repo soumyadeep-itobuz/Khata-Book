@@ -9,6 +9,13 @@ const updatedButton = document.querySelector(".updatedButton");
 updatedDisplay.classList.add("hidden");
 display.classList.add("hidden");
 
+money.addEventListener("keydown", function (e) {
+  if (e.code === "Enter") submit();
+});
+person.addEventListener("keydown", function (e) {
+  if (e.code === "Enter") submit();
+});
+
 function submit() {
   if (!person.value.trim() || !amount.value.trim() || amount.value <= 0) {    
     alert("Empty Field Not Allowed");
