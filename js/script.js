@@ -45,30 +45,29 @@ function show() {
   }
 }
 
-function update(i) {
-  console.log(i);
+function update(id) {
   arrayList.map((element) => {
-    if (i === element.id) {
+    if (id === element.id) {
       person.value = element.name;
     }
   });
   submitButton.classList.add("hidden");
   updatedButton.classList.remove("hidden");
   updatedButton.innerHTML = "";
-  updatedButton.innerHTML += `<button class="bg-success align-self-center text-white mt-3 py-1 px-3 border-0 rounded-2" onclick="addMoney(${i})">Add</button>
-  <button class="bg-danger align-self-center text-white mt-3 py-1 px-3 border-0 rounded-2" onclick="subMoney(${i})">Sub</button>`;
+  updatedButton.innerHTML += `<button class="bg-success align-self-center text-white mt-3 py-1 px-3 border-0 rounded-2" onclick="addMoney(${id})">Add</button>
+  <button class="bg-danger align-self-center text-white mt-3 py-1 px-3 border-0 rounded-2" onclick="subMoney(${id})">Sub</button>`;
 }
 
-function removeItem(i) {
-  let j = arrayList.findIndex((element) => element.id === i);
+function removeItem(id) {
+  let j = arrayList.findIndex((element) => element.id === id);
   arrayList.splice(j, 1);
   localStorage.setItem("arrayList", JSON.stringify(arrayList));
   show();
 }
 
-function addMoney(i) {
+function addMoney(id) {
   arrayList.map((element) => {
-    if (i === element.id) {
+    if (id === element.id) {
       element.money = Number(element.money) + Number(amount.value);
     } else {
       return element;
@@ -78,9 +77,9 @@ function addMoney(i) {
   show();
 }
 
-function subMoney(i) {
+function subMoney(id) {
   arrayList.map((element) => {
-    if (i === element.id) {
+    if (id === element.id) {
       element.money = Number(element.money) - Number(amount.value);
     } else {
       return element;
