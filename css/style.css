@@ -12,3 +12,8 @@ body {
 .updated input {
   max-height: 4rem;
 }
+
+.khata-list {
+  max-height: 25rem;
+  overflow-y: scroll;
+}
